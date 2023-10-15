@@ -1,0 +1,10 @@
+# Set the message here
+message = "❤LOL❤"
+# Control the brightness here
+intensity = 5
+
+# other stuff
+repoName = "dummy-repo-github-graphiti"
+localRepoDir = "/tmp"
+isPreview = false # Set to true to preview the message without pushing to github
+

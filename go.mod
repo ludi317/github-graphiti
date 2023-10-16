@@ -1,4 +1,4 @@
-module github.com/ludi317/git-graphiti
+module github.com/ludi317/github-graphiti
 
 go 1.18
 

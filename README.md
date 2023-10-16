@@ -3,7 +3,7 @@
 This tool displays a message on your Github contributions calendar. 
 
 ### Example
-message: `"😀LOL❤`, intensity: 5
+message: `😀LOL❤`, intensity: 5
 
 ![My Image](images/image.png)
 

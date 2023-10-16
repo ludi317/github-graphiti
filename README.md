@@ -27,9 +27,11 @@ No. The commits are made to, and removed from, a dummy repository only. They pai
 3. Run `go run .`. Check your contributions calendar to see the message.
 
 ### Supported Characters
-The following characters are supported: L U D I R E H A K ❤ O. Also, an empty space.
+The following characters are supported: L U D I R E H A K ❤ O G P S ! . 
 
-If you would like to support a new character, please add it to `characters.go` and open a PR.
+Also, an empty space.
+
+If you would like to support a new character, please add it to `characters.go` and open a PR, or ask me nicely.
 
 ### Inspiration
 Playing with the BBC micro:bit v2, and making designs on its 5 x 5 LED grid.

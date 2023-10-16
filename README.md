@@ -3,7 +3,7 @@
 This tool displays a message on your Github contributions calendar. 
 
 ### Example
-message: `❤LOL❤`, intensity: 10
+message: `"😀LOL❤`, intensity: 5
 
 ![My Image](images/image.png)
 
@@ -27,7 +27,7 @@ No. The commits are made to, and removed from, a dummy repository only. They pai
 3. Run `go run .`. Check your contributions calendar to see the message.
 
 ### Supported Characters
-The following characters are supported: L U D I R E H A K ❤ O G P S ! . 
+The following characters are supported: L U D I R E H A K ❤ O G P S ! . 😀
 
 Also, an empty space.
 

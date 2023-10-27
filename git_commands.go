@@ -12,21 +12,20 @@ func commit(date time.Time, localDummyRepo string, config *Config) error {
 	dateStr := date.Format("Mon Jan 2 15:04:05 2006")
 	var commitStr strings.Builder
 	for i := 0; i < config.Intensity; i++ {
-		commitStr.WriteString("git commit --allow-empty --author '")
-		commitStr.WriteString(config.GitUserName)
-		commitStr.WriteString(" <")
-		commitStr.WriteString(config.GitUserEmail)
-		commitStr.WriteString("> ' --date '")
-		commitStr.WriteString(dateStr)
-		commitStr.WriteString("' -m 'Generated commit'")
-		commitStr.WriteString(";")
+		commitStr.WriteString("git commit --allow-empty -m 'Generated commit';")
 	}
 	cmd := exec.Command("bash", "-c", commitStr.String())
 	cmd.Dir = localDummyRepo
-	cmd.Env = append(cmd.Env, fmt.Sprintf("GIT_COMMITTER_DATE=%s", dateStr))
-	err := cmd.Run()
+	cmd.Env = append(cmd.Env,
+		fmt.Sprintf("GIT_AUTHOR_DATE=%s", dateStr),
+		fmt.Sprintf("GIT_AUTHOR_EMAIL=%s", config.GitUserEmail),
+		fmt.Sprintf("GIT_COMMITTER_DATE=%s", dateStr),
+		fmt.Sprintf("GIT_COMMITTER_EMAIL=%s", config.GitUserEmail),
+	)
+
+	out, err := cmd.CombinedOutput()
 	if err != nil {
-		return fmt.Errorf("Failed to commit: %v", err)
+		return fmt.Errorf("Failed to commit: %s: %v", out, err)
 	}
 	return nil
 }
@@ -43,9 +42,9 @@ func getGitConfigValue(key string) (string, error) {
 func push(localRepoPath string) error {
 	cmd := exec.Command("git", "push")
 	cmd.Dir = localRepoPath
-	err := cmd.Run()
+	out, err := cmd.CombinedOutput()
 	if err != nil {
-		return fmt.Errorf("Failed to push: %v", err)
+		return fmt.Errorf("Failed to push: %s: %v", out, err)
 	}
 	return nil
 }

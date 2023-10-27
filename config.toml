@@ -2,6 +2,8 @@
 message = "😀LOL❤"
 # Control the brightness here
 intensity = 5
+# Github username, as it appears in your profile's URL: https://github.com/<githubUser>
+githubUser = "yourGithubUsername"
 
 # other stuff
 repoName = "dummy-repo-github-graphiti"

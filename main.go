@@ -12,6 +12,8 @@ const numRows = 7
 var numCols = 53
 
 func main() {
+	// print today's date
+	fmt.Println(time.Now().Format("Mon Jan 2 15:04:05 2006"))
 
 	config, err := loadConfig("config.toml")
 	if err != nil {
@@ -28,7 +30,7 @@ func main() {
 		return
 	}
 
-	repoURL, err := refreshRemoteDummyRepo(os.Getenv("GH_TOKEN"), config.GitUserName, config.RepoName)
+	repoURL, err := refreshRemoteDummyRepo(os.Getenv("GH_TOKEN"), config.GitHubUser, config.RepoName)
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
@@ -67,7 +69,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	fmt.Printf("Find your message at https://github.com/%s\n", config.GitUserName)
+	fmt.Printf("Find your message at https://github.com/%s\n", config.GitHubUser)
 }
 
 func calendarStartDate() time.Time {

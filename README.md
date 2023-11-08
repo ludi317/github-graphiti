@@ -22,12 +22,14 @@ No. The commits are made to, and removed from, a dummy repository only. They pai
 ### Usage
 0. Prerequisites: Your github personal access token is set in the `$GH_TOKEN` environment variable. You can create a token [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic). You also have installed `go`.
 1. Clone this repository. `cd` into the repo.
-2. Edit the `message` field in `config.toml` to set your desired message.
-3. Edit the `intensity` field in `config.toml` to set the intensity of painted days. Choose a value higher than your highest daily commit count to make the message more visible.
+2. Edit `config.toml`
+   1. Set the `message` field to your desired message. 
+   2. Set `intensity` to control the brightness of painted days. Choose a value higher than your highest daily commit count to make the message more visible. 
+   3. Set `githubUser` to your github username.
 3. Run `go run .`. Check your contributions calendar to see the message.
 
 ### Supported Characters
-Uppercase letters, '❤', ' ', '!', '.', and '😀'.
+Uppercase letters, ❤, !, ., and 😀. Also, an empty space.
 
 If you would like to support a new character, please add it to `characters.go` and open a PR, or ask me nicely.
 

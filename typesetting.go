@@ -31,12 +31,14 @@ func render(msg string) [][]int {
 	}
 
 	numRunes := utf8.RuneCountInString(msg)
-	spaceBetweenChars := (numCols - msgWidth) / (numRunes - 1)
-	if spaceBetweenChars < 1 {
-		fmt.Printf("Message %q is too long. Try a shorter message.", msg)
-		os.Exit(1)
+	if numRunes > 1 {
+		spaceBetweenChars := (numCols - msgWidth) / (numRunes - 1)
+		if spaceBetweenChars < 1 {
+			fmt.Printf("Message %q is too long. Try a shorter message.", msg)
+			os.Exit(1)
+		}
 	}
-	spaceBetweenChars = 1
+	spaceBetweenChars := 1
 	margins := numCols - msgWidth - spaceBetweenChars*(numRunes-1)
 
 	xOffset := margins / 2

@@ -27,9 +27,7 @@ No. The commits are made to, and removed from, a dummy repository only. They pai
 3. Run `go run .`. Check your contributions calendar to see the message.
 
 ### Supported Characters
-The following characters are supported: L U D I R E H A K ❤ O G P S ! . 😀
-
-Also, an empty space.
+Uppercase letters, '❤', ' ', '!', '.', and '😀'.
 
 If you would like to support a new character, please add it to `characters.go` and open a PR, or ask me nicely.
 
